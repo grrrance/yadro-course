@@ -15,10 +15,10 @@ type wordStopper struct {
 
 func NewWordStopper() (WordProcessor, error) {
 	jsonFile, err := os.Open("stopwords-iso.json")
-	defer jsonFile.Close()
 	if err != nil {
 		return nil, err
 	}
+	defer jsonFile.Close()
 	bytes, err := io.ReadAll(jsonFile)
 	if err != nil {
 		return nil, err

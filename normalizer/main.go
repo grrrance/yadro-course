@@ -71,11 +71,7 @@ func countWords(words []string) map[string]int {
 	counter := make(map[string]int)
 
 	for _, w := range words {
-		if _, ok := counter[w]; ok {
-			counter[w] += 1
-		} else {
-			counter[w] = 1
-		}
+		counter[w] = 1
 	}
 	return counter
 }

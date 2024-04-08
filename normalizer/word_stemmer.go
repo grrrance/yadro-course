@@ -4,14 +4,14 @@ import (
 	"github.com/kljensen/snowball"
 )
 
-type stemmer struct {
+type Stemmer struct {
 }
 
-func NewStemmer() WordProcessor {
-	return &stemmer{}
+func NewStemmer() Stemmer {
+	return Stemmer{}
 }
 
-func (n *stemmer) Run(language Language, words []string) ([]string, error) {
+func (n *Stemmer) Run(language Language, words []string) ([]string, error) {
 	stemmedWords := make([]string, len(words))
 
 	for i, w := range words {
